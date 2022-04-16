@@ -21,8 +21,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Docker build
-	  run: |
-      docker login -u ${{ secrets.USERNAME }} -p ${{ secrets.PASSWORD }}
-      docker build --platform linux/amd64 -t node-example .
-      docker tag node-example rheech22/node-example:${GITHUB_SHA::7}
-      docker push rheech22/node-example:${GITHUB_SHA::7}
+	    run: |
+        docker login -u ${{ secrets.USERNAME }} -p ${{ secrets.PASSWORD }}
+        docker build --platform linux/amd64 -t node-example .
+        docker tag node-example rheech22/node-example:${GITHUB_SHA::7}
+        docker push rheech22/node-example:${GITHUB_SHA::7}
